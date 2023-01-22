@@ -7,12 +7,14 @@ import {generateRandomId} from '../utils/GenerateRandomId';
 import Header from './components/Header';
 import Trailer from './components/TrailerYoutube';
 
-export default function App() {
+export default async function App() {
     const id = generateRandomId();
-    const movieDetail = getMovieDetail(id).then((data) => console.log(data));
 
-    // const movieTrailer = getMovieTrailer(id).then((data) => data);
-    const movieImage = getMovieImage(id);
+    const movieDetail = await getMovieDetail(22676);
+
+    console.log(movieDetail.success);
+    const movieTrailer = await getMovieTrailer(id);
+    const movieImage = await getMovieImage(id);
 
     return `
     <main class='h-screen w-full relative'>
