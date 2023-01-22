@@ -14,7 +14,7 @@ export const getMovieDetail = async (id) => {
 };
 
 export const getMovieTrailer = async (id) => {
-    const urlWithId = new URL(`${id}/videos`, urlWithId);
+    const urlWithId = new URL(`${id}/videos`, url);
     urlWithId.searchParams.set('api_key', import.meta.env.VITE_TMDB_API_KEY);
     urlWithId.searchParams.set('language', 'es-ES');
 
