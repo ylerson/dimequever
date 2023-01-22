@@ -20,7 +20,7 @@ export default async function App() {
 
     return `
     <main class='h-screen w-full relative'>
-        <h1 class="text-white text-3xl absolute top-8 left-80  z-10 font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-red-400 to-pink-600">QUE VER HOY?<h1>
+        <h1 class="text-white text-3xl absolute top-8 left-8 md:left-80 z-10 font-extrabold text-transparent  bg-clip-text bg-gradient-to-r from-red-400 to-pink-600">QUE VER HOY?<h1>
         ${Trailer(movieTrailer)}
         ${Header(movieImage, movieDetail, movieCast)}
     

@@ -4,8 +4,8 @@ export default function Trailer(results) {
 
     const key = results.results[0]?.key;
     return `
-    <div class="absolute top-44 z-10 right-96 p-2 bg-white rounded">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="absolute top-32 w-[360px] h-[215px] md:w-[560px] md:h-[315px]  md:top-44 z-10 right-2 md:right-96 p-2 bg-white rounded">
+    <iframe class="w-full h-full" src="https://www.youtube.com/embed/${key}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     
     </div>
     

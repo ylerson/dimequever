@@ -10,10 +10,10 @@ export default function Header(movieImage, movieDetail, movieCast) {
             : `https://image.tmdb.org/t/p/original/${imagenBackground?.file_path}`;
 
     return `
-    <div class="w-full h-full fixed top-0 left-0">
-        <img class="w-full h-full object-cover " src=${setBackground}></img>
-        <div class="absolute w-full h-96 bottom-0 from-gray-900  bg-gradient-to-t ">
-            <section class="flex justify-between gap-6 w-8/12 max-w-full m-auto">
+    <div class="w-full h-full ">
+        <img class="w-full h-full object-cover fixed top-0 left-0" src=${setBackground}></img>
+        <div class="absolute w-full h-full md:h-96 bottom-0 max-sm:top-52  from-gray-900  bg-gradient-to-t ">
+            <section class="flex flex-col md:flex-row justify-end p-4 md:p-0 md:justify-between gap-6 md:w-8/12 max-w-full md:m-auto h-full">
             
            ${MovieInfo(movieDetail)}
 
