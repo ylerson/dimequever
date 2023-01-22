@@ -1,16 +1,21 @@
 import MovieInfo from './MovieInfo';
 import MovieMedia from './MovieMedia';
 
-export default function Header() {
+export default function Header(movieImage, movieDetail, movieCast) {
+    const imagenBackground = movieImage?.backdrops[0];
+    if (imagenBackground?.file_path === undefined) return location.reload();
+
+    const urlImagen = `https://image.tmdb.org/t/p/original/${imagenBackground?.file_path}`;
+
     return `
     <div class="w-full h-full fixed top-0 left-0">
-        <img class="w-full h-full object-cover " src="https://www.themoviedb.org/t/p/original/xRzYU69uoZeYkQhDU8tsFCQRac7.jpg"></img>
+        <img class="w-full h-full object-cover " src=${urlImagen}></img>
         <div class="absolute w-full h-96 bottom-0 from-gray-900  bg-gradient-to-t ">
-            <section class="flex justify-between w-8/12 max-w-full m-auto">
+            <section class="flex justify-between gap-6 w-8/12 max-w-full m-auto">
             
-           ${MovieInfo()}
+           ${MovieInfo(movieDetail)}
 
-            ${MovieMedia()}
+            ${MovieMedia(movieImage, movieCast)}
             
             </section>
         

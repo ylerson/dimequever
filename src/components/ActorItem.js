@@ -1,7 +1,9 @@
-export default function ActorItem() {
-    return ` <li class="flex flex-col items-center">
-<img class="w-12 h-12 rounded-full grayscale" src="https://www.themoviedb.org/t/p/original/qHdPNd1cUaSNYLLNgt1Pv3LVd0T.jpg"></img>
-<p class="text-white text-sm">Timothee</p>
+export default function ActorItem(cast) {
+    const urlImagen = `https://www.themoviedb.org/t/p/original/${cast.profile_path}`;
+
+    return ` <li class="flex flex-col items-center scrollbar-hide overflow-x-scroll">
+<img class="w-12 h-12 object-cover rounded-full grayscale" src=${urlImagen}></img>
+<p class="text-white text-sm text-center">${cast.name}</p>
 </li>
 `;
 }
