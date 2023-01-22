@@ -16,7 +16,7 @@ export const getMovieDetail = async (id) => {
 export const getMovieTrailer = async (id) => {
     const urlWithId = new URL(`${id}/videos`, url);
     urlWithId.searchParams.set('api_key', import.meta.env.VITE_TMDB_API_KEY);
-    urlWithId.searchParams.set('language', 'es-ES');
+    urlWithId.searchParams.set('language', 'en-US');
 
     try {
         const response = await fetch(urlWithId);
@@ -29,7 +29,20 @@ export const getMovieTrailer = async (id) => {
 export const getMovieImage = async (id) => {
     const urlWithId = new URL(`${id}/images`, url);
 
-    urlWithId.searchParams.set('language', 'es-ES');
+    urlWithId.searchParams.set('api_key', import.meta.env.VITE_TMDB_API_KEY);
+
+    try {
+        const response = await fetch(urlWithId);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        return error;
+    }
+};
+
+export const getMovieCast = async (id) => {
+    const urlWithId = new URL(`${id}/credits`, url);
+
     urlWithId.searchParams.set('api_key', import.meta.env.VITE_TMDB_API_KEY);
 
     try {
